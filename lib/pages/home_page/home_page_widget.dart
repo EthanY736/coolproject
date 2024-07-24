@@ -1,10 +1,10 @@
+import 'dart:async';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart' as PlatformInterface;
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -17,6 +17,20 @@ class HomePageWidget extends StatefulWidget {
 
 class _HomePageWidgetState extends State<HomePageWidget> {
   late HomePageModel _model;
+  TextEditingController _searchController = TextEditingController();
+  final Completer<GoogleMapController> _controller =
+  Completer<GoogleMapController>();
+
+  static const CameraPosition _kGooglePlex = CameraPosition(
+    target: PlatformInterface.LatLng(37.42796133580664, -122.085749655962),
+    zoom: 14.4746,
+  );
+
+  static const CameraPosition _kLake = CameraPosition(
+      bearing: 192.8334901395799,
+      target: PlatformInterface.LatLng(37.43296265331129, -122.08832357078792),
+      tilt: 59.440717697143555,
+      zoom: 19.151926040649414);
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -47,26 +61,26 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           automaticallyImplyLeading: false,
           title: AuthUserStreamWidget(
             builder: (context) => Text(
-              'Welcome back, ${currentUserDisplayName}!',
+              'Welcome, ${currentUserDisplayName}!',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Poppins',
-                    color: FlutterFlowTheme.of(context).primaryBackground,
-                    fontSize: 25.0,
-                    letterSpacing: 0.0,
-                    fontWeight: FontWeight.normal,
-                  ),
+                fontFamily: 'Poppins',
+                color: FlutterFlowTheme.of(context).primaryBackground,
+                fontSize: 25.0,
+                letterSpacing: 0.0,
+                fontWeight: FontWeight.normal,
+              ),
             ),
           ),
           actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
-        body: SafeArea(
-          top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [],
-          ),
+        body: GoogleMap(
+          mapType: MapType.hybrid,
+          initialCameraPosition: _kGooglePlex,
+          onMapCreated: (GoogleMapController controller) {
+            _controller.complete(controller);
+          },
         ),
       ),
     );
