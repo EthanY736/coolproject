@@ -55,32 +55,22 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
-          automaticallyImplyLeading: false,
-          title: AuthUserStreamWidget(
-            builder: (context) => Text(
-              'Welcome, ${currentUserDisplayName}!',
-              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                fontFamily: 'Poppins',
-                color: FlutterFlowTheme.of(context).primaryBackground,
-                fontSize: 25.0,
-                letterSpacing: 0.0,
-                fontWeight: FontWeight.normal,
-              ),
-            ),
+        backgroundColor: Colors.black,
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.only(top: 12.0, left: 8.0, bottom: 0.0, right: 8.0),
+          child: SearchBar(
+            controller: _searchController,
           ),
-          actions: [],
-          centerTitle: true,
-          elevation: 2.0,
         ),
-        body: GoogleMap(
-          mapType: MapType.hybrid,
-          initialCameraPosition: _kGooglePlex,
-          onMapCreated: (GoogleMapController controller) {
-            _controller.complete(controller);
-          },
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerTop,
+        body: SafeArea(
+          child: GoogleMap(
+            mapType: MapType.terrain,
+            initialCameraPosition: _kGooglePlex,
+            onMapCreated: (GoogleMapController controller) {
+              _controller.complete(controller);
+            },
+          ),
         ),
       ),
     );
