@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:coding_minds_template/pages/new_business_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
@@ -169,6 +170,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'EditProfile',
           path: '/editProfile',
           builder: (context, params) => EditProfileWidget(),
+        ),
+        FFRoute(
+          name: 'NewBusiness',
+          path: '/newBusiness',
+          builder: (context, params) => NewBusinessPage(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

@@ -63,14 +63,18 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerTop,
-        body: SafeArea(
-          child: GoogleMap(
-            mapType: MapType.terrain,
-            initialCameraPosition: _kGooglePlex,
-            onMapCreated: (GoogleMapController controller) {
-              _controller.complete(controller);
-            },
-          ),
+        body: Column(
+          children: [
+            Expanded(
+              child: GoogleMap(
+                mapType: MapType.terrain,
+                initialCameraPosition: _kGooglePlex,
+                onMapCreated: (GoogleMapController controller) {
+                  _controller.complete(controller);
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
