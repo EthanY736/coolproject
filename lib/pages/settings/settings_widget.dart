@@ -214,7 +214,7 @@ class _SettingsWidgetState extends State<SettingsWidget>
                             onPressed: () async {
                               context.pushNamed('NewBusiness');
                             },
-                            text: 'New Business',
+                            text: 'Business',
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart' as PlatformInterface;
 import '/auth/firebase_auth/auth_util.dart';
@@ -49,32 +50,35 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: Colors.black,
-        floatingActionButton: Padding(
-          padding: const EdgeInsets.only(top: 12.0, left: 8.0, bottom: 0.0, right: 8.0),
-          child: SearchBar(
-            controller: _searchController,
-          ),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerTop,
-        body: Column(
-          children: [
-            Expanded(
-              child: GoogleMap(
-                mapType: MapType.terrain,
-                initialCameraPosition: _kGooglePlex,
-                onMapCreated: (GoogleMapController controller) {
-                  _controller.complete(controller);
-                },
-              ),
+    return SafeArea(
+      child: GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        behavior: HitTestBehavior.opaque,
+        child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: Colors.black,
+          floatingActionButton: Padding(
+            padding: const EdgeInsets.only(top: 30.0, left: 8.0, bottom: 0.0, right: 8.0),
+            child: SearchBar(
+              leading: Icon(CupertinoIcons.search),
+              controller: _searchController,
             ),
-          ],
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerTop,
+          body: Stack(
+            children: [GoogleMap(
+              mapType: MapType.terrain,
+              initialCameraPosition: _kGooglePlex,
+              onMapCreated: (GoogleMapController controller) {
+                _controller.complete(controller);
+              },
+            ),
+            GestureDetector(
+              onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+              behavior: HitTestBehavior.translucent,
+              child: Container(color: Colors.transparent),
+            ),]
+          ),
         ),
       ),
     );
