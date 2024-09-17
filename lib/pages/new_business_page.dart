@@ -159,8 +159,9 @@ class _NewBusinessPageState extends State<NewBusinessPage> {
                         controller: _businessType,
                         enableFilter: true,
                         requestFocusOnTap: true,
+                        width: MediaQuery.of(context).size.width - 80,
                         leadingIcon: const Icon(Icons.search),
-                        label: const Text('Icon'),
+                        label: const Text('Job Type'),
                         inputDecorationTheme: const InputDecorationTheme(
                           filled: true,
                           contentPadding: EdgeInsets.symmetric(vertical: 5.0),
@@ -180,7 +181,13 @@ class _NewBusinessPageState extends State<NewBusinessPage> {
                           },
                         ).toList(),
                       ),
+                      SizedBox(
+                        height: 30,
+                      ),
                       ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blueAccent.shade700,
+                        ),
                           onPressed: () {
                             businesses
                                 .collection('businesses')
@@ -194,7 +201,7 @@ class _NewBusinessPageState extends State<NewBusinessPage> {
       
                             Navigator.pop(context);
                           },
-                          child: const Text("Create"))
+                          child: const Text("Save"))
                     ],
                   )),
             )),
