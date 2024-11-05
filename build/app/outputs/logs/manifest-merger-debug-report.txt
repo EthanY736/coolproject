@@ -1,10 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-68:12
-INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-68:12
-INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-68:12
-INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-68:12
-MERGED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-68:12
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-71:12
+INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-71:12
+INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-71:12
+INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-71:12
+MERGED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-71:12
 MERGED from [:sign_in_with_apple] C:\Source\Projects\coding_minds_template-master\build\sign_in_with_apple\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:firebase_performance] C:\Source\Projects\coding_minds_template-master\build\firebase_performance\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-19:12
 MERGED from [:cloud_firestore] C:\Source\Projects\coding_minds_template-master\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
@@ -112,14 +112,14 @@ INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\de
 		INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\debug\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-68:12
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-71:12
 		INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\debug\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:3:5-51
 		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-68:12
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:1-71:12
 		INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:1:11-69
@@ -171,8 +171,16 @@ uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:9:5-81
 	android:name
 		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:9:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:11:22-76
+uses-permission#android.permission.WRITE_COARSE_LOCATION
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:12:5-80
+	android:name
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:12:22-77
 application
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:11:5-67:19
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:14:5-70:19
 MERGED from [:firebase_performance] C:\Source\Projects\coding_minds_template-master\build\firebase_performance\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-17:19
 MERGED from [:firebase_performance] C:\Source\Projects\coding_minds_template-master\build\firebase_performance\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-17:19
 MERGED from [:cloud_firestore] C:\Source\Projects\coding_minds_template-master\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
@@ -250,93 +258,93 @@ MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\
 MERGED from [com.google.maps.android:android-maps-utils:3.6.0] C:\Users\ethan\.gradle\caches\transforms-3\913ee98d20e0cb5e4175505b2785ee15\transformed\jetified-android-maps-utils-3.6.0\AndroidManifest.xml:7:5-11:19
 MERGED from [com.google.maps.android:android-maps-utils:3.6.0] C:\Users\ethan\.gradle\caches\transforms-3\913ee98d20e0cb5e4175505b2785ee15\transformed\jetified-android-maps-utils-3.6.0\AndroidManifest.xml:7:5-11:19
 	android:requestLegacyExternalStorage
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:15:9-52
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:18:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.10.1] C:\Users\ethan\.gradle\caches\transforms-3\6e9cbb135cbc7097deac6020464c8a75\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:12:9-46
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:15:9-46
 	android:icon
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:14:9-43
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:17:9-43
 	tools:replace
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:13:9-38
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:16:9-38
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:16:9-17:70
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:19:9-20:70
 	android:value
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:17:13-68
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:20:13-68
 	android:name
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:16:20-65
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:19:20-65
 activity#cm.codingmindstemplate.MainActivity
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:19:9-57:20
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:22:9-60:20
 	android:launchMode
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:22:13-43
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:25:13-43
 	android:hardwareAccelerated
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:25:13-47
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:28:13-47
 	android:windowSoftInputMode
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:26:13-55
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:29:13-55
 	android:exported
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:21:13-36
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:24:13-36
 	android:configChanges
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:24:13-163
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:27:13-163
 	android:theme
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:23:13-47
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:26:13-47
 	android:name
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:20:13-41
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:23:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:31:13-34:17
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:34:13-37:17
 	android:resource
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:33:15-52
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:36:15-52
 	android:name
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:32:15-70
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:35:15-70
 meta-data#io.flutter.embedding.android.SplashScreenDrawable
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:40:13-43:17
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:43:13-46:17
 	android:resource
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:42:15-61
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:45:15-61
 	android:name
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:41:15-79
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:44:15-79
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:44:13-47:29
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:47:13-50:29
 action#android.intent.action.MAIN
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:45:17-68
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:48:17-68
 	android:name
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:45:25-66
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:48:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:46:17-76
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:49:17-76
 	android:name
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:46:27-74
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:49:27-74
 meta-data#flutter_deeplinking_enabled
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:49:13-90
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:52:13-90
 	android:value
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:49:67-87
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:52:67-87
 	android:name
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:49:24-66
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:52:24-66
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:codingmindstemplate.com+data:scheme:codingmindstemplate
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:50:13-55:29
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:53:13-58:29
 	android:autoVerify
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:50:28-53
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:53:28-53
 action#android.intent.action.VIEW
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:51:17-69
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:54:17-69
 	android:name
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:51:25-66
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:54:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:52:17-76
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:55:17-76
 	android:name
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:52:27-73
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:55:27-73
 category#android.intent.category.BROWSABLE
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:53:17-78
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:56:17-78
 	android:name
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:53:27-75
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:56:27-75
 data
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:54:17-101
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:57:17-101
 	android:host
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:54:60-98
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:57:60-98
 	android:scheme
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:54:23-59
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:57:23-59
 meta-data#flutterEmbedding
-ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:61:9-63:33
+ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:64:9-66:33
 	android:value
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:63:13-30
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:66:13-30
 	android:name
-		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:62:13-44
+		ADDED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml:65:13-44
 uses-sdk
 INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Source\Projects\coding_minds_template-master\android\app\src\main\AndroidManifest.xml
