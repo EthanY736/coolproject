@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firebase Firest
 import 'package:coding_minds_template/pages/business/buiness_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart'
     as PlatformInterface;
@@ -61,6 +62,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               'businessName': doc['businessName'],
               'businessLoc': doc['businessLoc'],
               'businessDesc': doc['businessDesc'],
+              'businessLng': doc['businessLong'],
+              'businessLat': doc['businessLat']
             })
         .toList();
 
@@ -81,7 +84,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       height: MediaQuery.of(context).size.height * 0.75,
       padding: const EdgeInsets.all(16.0),
       decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 251, 252, 250),
+        color: Color.fromARGB(255, 230, 230, 240),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(16.0),
           topRight: Radius.circular(16.0),
@@ -102,7 +105,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             itemCount: results.length,
             itemBuilder: (context, index) {
               return Card(
-                elevation: 4,
+                elevation: 5,
                 margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -135,21 +138,28 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ],
                   ),
                   trailing: const Icon(Icons.chevron_right, color: Colors.blueAccent), // Adds an arrow for better navigation hint
-                  onTap: () {
-                    Navigator.pop(context); // Close the bottom sheet
-                    Future.delayed(const Duration(milliseconds: 200), () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => BusinessPage(
+                    onTap: () {
+                      Navigator.pop(context); // Close the current bottom sheet
+
+                      Future.delayed(const Duration(milliseconds: 200), () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,   // To control the modal height if needed
+                          isDismissible: true,        // Allows tapping outside to dismiss
+                          enableDrag: true,           // Allows dragging down to dismiss
+                          backgroundColor: Colors.transparent,  // Makes the background transparent if needed
+                          builder: (context) => Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20.0),  // Optional padding
+                            child: BusinessPage(
                               businessName: results[index]['businessName'],
                               businessDesc: results[index]['businessDesc'],
                               businessLoc: results[index]['businessLoc'],
-                              businessType: selectedLabel.label),
-                        ),
-                      );
-                    });
-                  },
+                              businessType: selectedLabel.label,
+                            ),
+                          ),
+                        );
+                      });
+                    }
                 ),
               );
             },
@@ -209,6 +219,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               });
               if (icon != null) {
                 _performSearch(icon); // Perform search when label is selected
+                FocusManager.instance.primaryFocus?.unfocus();
               }
             },
             dropdownMenuEntries:
