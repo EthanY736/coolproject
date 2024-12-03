@@ -31,6 +31,8 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageWidgetState extends State<HomePageWidget> {
+  late double latitude;
+  late double longitude;
   final TextEditingController _businessType = TextEditingController();
   Label? selectedIcon;
   final Completer<GoogleMapController> _controller =
@@ -40,6 +42,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     target: PlatformInterface.LatLng(37.42796133580664, -122.085749655962),
     zoom: 14.4746,
   );
+
+  static late CameraPosition _kPosition;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -100,80 +104,96 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           const SizedBox(height: 16),
           results.isNotEmpty
               ? ListView.builder(
-            shrinkWrap: true,
-            physics: BouncingScrollPhysics(), // Adds a smoother scrolling effect
-            itemCount: results.length,
-            itemBuilder: (context, index) {
-              return Card(
-                elevation: 5,
-                margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: ListTile(
-                  leading: CircleAvatar(
-                    backgroundColor: Colors.blueAccent, // Customize the icon background color
-                    child: const Icon(Icons.business, color: Colors.white),
-                  ),
-                  title: Text(
-                    results[index]['businessName'],
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  subtitle: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        results[index]['businessLoc'],
-                        style: const TextStyle(color: Colors.grey),
+                  shrinkWrap: true,
+                  physics:
+                      BouncingScrollPhysics(), // Adds a smoother scrolling effect
+                  itemCount: results.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      elevation: 5,
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                      const SizedBox(height: 4),
-                      Text(
-                        results[index]['businessDesc'],
-                        maxLines: 2, // Limits description to 2 lines
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(color: Colors.grey.shade600),
-                      ),
-                    ],
-                  ),
-                  trailing: const Icon(Icons.chevron_right, color: Colors.blueAccent), // Adds an arrow for better navigation hint
-                    onTap: () {
-                      Navigator.pop(context); // Close the current bottom sheet
-
-                      Future.delayed(const Duration(milliseconds: 200), () {
-                        showModalBottomSheet(
-                          context: context,
-                          isScrollControlled: true,   // To control the modal height if needed
-                          isDismissible: true,        // Allows tapping outside to dismiss
-                          enableDrag: true,           // Allows dragging down to dismiss
-                          backgroundColor: Colors.transparent,  // Makes the background transparent if needed
-                          builder: (context) => Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20.0),  // Optional padding
-                            child: BusinessPage(
-                              businessName: results[index]['businessName'],
-                              businessDesc: results[index]['businessDesc'],
-                              businessLoc: results[index]['businessLoc'],
-                              businessType: selectedLabel.label,
+                      child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundColor: Colors
+                                .blueAccent, // Customize the icon background color
+                            child:
+                                const Icon(Icons.business, color: Colors.white),
+                          ),
+                          title: Text(
+                            results[index]['businessName'],
+                            style: const TextStyle(
+                              fontSize: 16,
                             ),
                           ),
-                        );
-                      });
-                    }
-                ),
-              );
-            },
-          )
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                results[index]['businessLoc'],
+                                style: const TextStyle(color: Colors.grey),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                results[index]['businessDesc'],
+                                maxLines: 2, // Limits description to 2 lines
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(color: Colors.grey.shade600),
+                              ),
+                            ],
+                          ),
+                          trailing: const Icon(Icons.chevron_right,
+                              color: Colors
+                                  .blueAccent), // Adds an arrow for better navigation hint
+                          onTap: () {
+                            Navigator.pop(context); //  Close the current bottom
+                            latitude = double.parse(results[index]['businessLat']);
+                            longitude = double.parse(results[index]['businessLong']);
+                            _kPosition = CameraPosition(
+                                target: LatLng(latitude, latitude), zoom: 20);
+                            _goToPlace();
+                            Future.delayed(const Duration(milliseconds: 200),
+                                () {
+                              showModalBottomSheet(
+                                context: context,
+                                isScrollControlled:
+                                    true, // To control the modal height if needed
+                                isDismissible:
+                                    true, // Allows tapping outside to dismiss
+                                enableDrag:
+                                    true, // Allows dragging down to dismiss
+                                backgroundColor: Colors
+                                    .transparent, // Makes the background transparent if needed
+                                builder: (context) => Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 20.0), // Optional padding
+                                  child: BusinessPage(
+                                    businessName: results[index]
+                                        ['businessName'],
+                                    businessDesc: results[index]
+                                        ['businessDesc'],
+                                    businessLoc: results[index]['businessLoc'],
+                                    businessType: selectedLabel.label,
+                                  ),
+                                ),
+                              );
+                            });
+                          }),
+                    );
+                  },
+                )
               : const Center(
-            child: Text(
-              'No results found',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-              ),
-            ),
-          ),
-
+                  child: Text(
+                    'No results found',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
         ],
       ),
     );
@@ -257,5 +277,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         ),
       ),
     );
+  }
+
+  Future<void> _goToPlace() async {
+    final GoogleMapController controller = await _controller.future;
+    await controller.animateCamera(CameraUpdate.newCameraPosition(_kPosition));
   }
 }

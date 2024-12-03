@@ -1,0 +1,1 @@
+ C:\\Source\\Projects\\coding_minds_template-master\\.dart_tool\\flutter_build\\b00ec5dfe4f5faa3c621872eec3be4b9\\native_assets.yaml: 

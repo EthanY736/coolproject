@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BusinessPage extends StatefulWidget {
@@ -54,18 +55,23 @@ class _BusinessPageState extends State<BusinessPage> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Icon(Icons.location_on, color: Colors.teal),
-                      SizedBox(width: 8),
-                      Text(
-                        widget.businessLoc,
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          color: Colors.grey[700],
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: Row(
+                      children: [
+                        Icon(Icons.location_on, color: Colors.teal),
+                        SizedBox(width: 8),
+                        Text(
+                          widget.businessLoc,
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            color: Colors.grey[700],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   SizedBox(height: 10),
                   Row(
