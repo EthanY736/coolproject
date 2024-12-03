@@ -66,7 +66,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               'businessName': doc['businessName'],
               'businessLoc': doc['businessLoc'],
               'businessDesc': doc['businessDesc'],
-              'businessLng': doc['businessLong'],
+              'businessLong': doc['businessLong'],
               'businessLat': doc['businessLat']
             })
         .toList();
@@ -153,7 +153,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             latitude = double.parse(results[index]['businessLat']);
                             longitude = double.parse(results[index]['businessLong']);
                             _kPosition = CameraPosition(
-                                target: LatLng(latitude, latitude), zoom: 20);
+                                target: LatLng(latitude, longitude), zoom: 20);
                             _goToPlace();
                             Future.delayed(const Duration(milliseconds: 200),
                                 () {
@@ -281,6 +281,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
   Future<void> _goToPlace() async {
     final GoogleMapController controller = await _controller.future;
+    print("Going to ${_kPosition.target}");
     await controller.animateCamera(CameraUpdate.newCameraPosition(_kPosition));
   }
 }

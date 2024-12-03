@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "cm.codingmindstemplate.app-mergeDebugResources-6:/values-night-v31/values-night-v31.xml",
+            "outputFile": "cm.codingmindstemplate.app-mergeDebugResources-34:/values-night-v31/values-night-v31.xml",
             "map": [
                 {
-                    "source": "C:\\Source\\Projects\\coding_minds_template-master\\android\\app\\src\\main\\res\\values-night-v31\\styles.xml",
+                    "source": "C:\\Users\\victo\\Documents\\GitHub\\coolproject\\android\\app\\src\\main\\res\\values-night-v31\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
-                        "startOffsets": "172,815",
+                        "startOffsets": "175,829",
                         "endLines": "7,16",
                         "endColumns": "12,12",
-                        "endOffsets": "464,979"
+                        "endOffsets": "471,995"
                     },
                     "to": {
                         "startLines": "2,6",

@@ -1,8 +1,8 @@
-#Mon Dec 02 17:48:29 PST 2024
-base.0=C\:\\Source\\Projects\\coding_minds_template-master\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-base.1=C\:\\Source\\Projects\\coding_minds_template-master\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
-base.2=C\:\\Source\\Projects\\coding_minds_template-master\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
-base.3=C\:\\Source\\Projects\\coding_minds_template-master\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes4.dex
+#Tue Dec 03 09:06:01 PST 2024
+base.0=C\:\\Users\\victo\\Documents\\GitHub\\coolproject\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+base.1=C\:\\Users\\victo\\Documents\\GitHub\\coolproject\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
+base.2=C\:\\Users\\victo\\Documents\\GitHub\\coolproject\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
+base.3=C\:\\Users\\victo\\Documents\\GitHub\\coolproject\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes4.dex
 path.0=classes.dex
 path.1=classes2.dex
 path.2=classes3.dex

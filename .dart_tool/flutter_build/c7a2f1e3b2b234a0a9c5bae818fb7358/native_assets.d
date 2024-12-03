@@ -1,0 +1,1 @@
+ C:\\Users\\victo\\Documents\\GitHub\\coolproject\\.dart_tool\\flutter_build\\c7a2f1e3b2b234a0a9c5bae818fb7358\\native_assets.yaml: 

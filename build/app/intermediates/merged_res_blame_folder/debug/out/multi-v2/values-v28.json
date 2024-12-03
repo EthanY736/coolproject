@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "cm.codingmindstemplate.app-mergeDebugResources-6:/values-v28/values-v28.xml",
+            "outputFile": "cm.codingmindstemplate.app-mergeDebugResources-34:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ethan\\.gradle\\caches\\transforms-3\\3eb9cd7c7fb4a067b945d68ef15304bf\\transformed\\appcompat-1.2.0\\res\\values-v28\\values-v28.xml",
+                    "source": "C:\\Users\\victo\\.gradle\\caches\\transforms-3\\3eb9cd7c7fb4a067b945d68ef15304bf\\transformed\\appcompat-1.2.0\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
